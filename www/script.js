@@ -1,3 +1,10 @@
+const socket = io();
+
+
+socket.on("new", function(userInfo){
+    console.log(userInfo);
+});
+
 
 function enviarMensaje (msg, user, lado) {
     let lastMsg = document.querySelector(".container").querySelector("div");
@@ -42,7 +49,6 @@ document.querySelector("input").addEventListener("keydown",(e) => {
     if (e.key == "Enter") {
         inputMensaje();
     }
-
 });
 
 
