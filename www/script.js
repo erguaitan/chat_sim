@@ -1,21 +1,35 @@
 const socket = io();
 
+let currentUser = "usuario1"
+let currentID = "z"
 
-socket.on("new", function(userInfo){
-    console.log(userInfo);
+socket.emit("new", currentUser);
+
+socket.on("new", function(userInfo) {
+    currentID = userInfo.id;
+});
+
+socket.on("msg", function(msg){
+    enviarMensaje(msg.content, msg.user, msg.id)
 });
 
 
-function enviarMensaje (msg, user, lado) {
+function enviarMensaje (msg, user, userId) {
     let lastMsg = document.querySelector(".container").querySelector("div");
     let lastUser = lastMsg.querySelector("div").querySelector("p").innerHTML;
     
     let newMsg = document.createElement("p");
     newMsg.innerHTML = msg;
 
-    if (lastUser === user) {
+    if (lastUser === user && userId === currentID) {
         lastMsg.appendChild(newMsg)
     } else {
+        let lado
+        if (userId === currentID){
+            lado = "d";
+        }else {
+            lado = "i"
+        }
         //imagen user
         let imgUser = document.createElement("img");
         imgUser.src = "media/user.jpg";
@@ -40,7 +54,8 @@ function enviarMensaje (msg, user, lado) {
 
 function inputMensaje () {
     let inpMsg = document.querySelector("input");
-    enviarMensaje(inpMsg.value, "usuario 5", "i");
+    enviarMensaje(inpMsg.value, currentUser, currentID);
+    socket.emit("msg", {content:inpMsg.value, user:currentUser, id:currentID});
     inpMsg.value = "";
 }
 
