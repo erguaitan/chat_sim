@@ -1,7 +1,7 @@
 :root {
     --fuente: "Arial";
     --tam_msg: 15px;
-    --tam_head: 20px;
+    --tam_head: 22px;
 
     --cl_fondo: #FFC180;
     --cl_cont: #FFDCB6;
@@ -24,9 +24,9 @@ header {
     background-color: var(--cl_top_dwn);
     border: 2px solid black;
     box-shadow: 3px 5px 2px black;
-    height: 60px;
-    margin: 30px;
-    padding: 20px;
+    height: 40px;
+    margin: 15px;
+    padding: 20px 15px;
     border-radius: 50px;
     display: flex;
     align-items: center;
@@ -52,8 +52,8 @@ header > p {
     background-color: var(--cl_top_dwn);
     border: 2px solid black;
     box-shadow: 3px 5px 2px black;
-    height: 60px;
-    margin: 30px;
+    height: 40px;
+    margin: 15px;
     padding: 20px;
     border-radius: 50px;
     display: flex;
@@ -64,12 +64,11 @@ header > p {
     border-radius: 50px;
     border: 1px solid black;
     outline: 0;
-    padding: 0px 30px;
+    padding: 15px 30px;
     margin-right: 10px;
     color: #000;
     font-family: var(--fuente);
     font-size: var(--tam_msg);
-    height: 60px;
     flex-grow: 1;
 }
 
@@ -85,6 +84,7 @@ header > p {
 
 .mensajero > div > i {
     font-size: 40px;
+    cursor: pointer;
 }
 
 .container {
@@ -99,6 +99,7 @@ header > p {
     flex-grow: 1;
     height: 65vh;
     overflow-y: auto;
+    scroll-behavior:smooth;
 }
 
 .container::-webkit-scrollbar {
