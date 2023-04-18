@@ -70,11 +70,11 @@ header > p {
     font-family: var(--fuente);
     font-size: var(--tam_msg);
     flex-grow: 1;
+    overflow-x: hidden;
 }
 
 .mensajero > div {
     border-radius: 50%;
-    background-color: #FF8D12;
     height: 60px;
     width: 60px;
     display: flex;
@@ -97,7 +97,6 @@ header > p {
     display: flex;
     flex-direction: column-reverse;
     flex-grow: 1;
-    height: 65vh;
     overflow-y: auto;
     scroll-behavior:smooth;
 }
@@ -241,4 +240,45 @@ header > p {
     background-color: var(--cl_top_dwn);
     font-weight: 600;
     cursor: pointer;
+}
+
+
+@media (max-width: 600px) {
+    .mensaje_d > p,
+    .mensaje_i > p {
+        max-width: 50%;
+    }
+
+    .container {
+        margin: 0px;
+        box-shadow: 0px 0px 0px black;
+        border: 0px;
+        background-color: var(--cl_fondo);
+    }
+
+    .mensaje_d > p {
+        background-color: var(--cl_cont);
+    }
+
+    header {
+        height: 20px;
+    }
+
+    header > img {
+        height: 40px;
+        width: 40px;
+    }
+
+    header > p {
+        font-size: 18px;
+    }
+
+    .mensajero {
+        height: 20px;
+        padding: 20px 15px;
+    }
+
+    .mensajero > input {
+        padding: 10px 30px;
+    }
 }
