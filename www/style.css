@@ -210,3 +210,35 @@ header > p {
     box-shadow: 1px 3px 2px black;
 }
 
+#modal_user {
+    width: 50%;
+    padding: 20px;
+    flex-direction: column;
+    margin: auto;
+    border: 4px solid var(--cl_top_dwn);
+    border-radius: 20px;
+    background-color: #1F1F1F;
+    outline: 0;
+}
+
+#modal_user::backdrop {
+    background-color: rgb(0, 0, 0,0.7);
+}
+
+#modal_user > input,
+#modal_user > button {
+    padding: 20px;
+    margin: 10px;
+    border: 2px solid var(--cl_top_dwn);
+    border-radius: 20px;
+    color: #000;
+    font-family: "Arial";
+    font-size: var(--tam_msg);
+    outline: 0;
+}
+
+#modal_user > button {
+    background-color: var(--cl_top_dwn);
+    font-weight: 600;
+    cursor: pointer;
+}
